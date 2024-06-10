@@ -40,6 +40,16 @@ article {
   padding: 50px 0;
 }
 
+/* about section restyling circle img and text content */
+.about-main-box{
+  display: flex;
+}
+
+/* left aligned text content after hi! i'm pete thinkful */
+.about-right-box {
+  text-align: left;
+}
+
 article div {
   text-align: center;
   width: 100%;
