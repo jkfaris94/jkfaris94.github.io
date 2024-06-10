@@ -21,6 +21,14 @@ header {
   text-align: center;
 }
 
+/* turned nav into flexbox and horizontally aligned on a single row and vertically centered within the header container*/ 
+.nav {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+}
+
 /* Containers */
 div {
   background-color: #eae2b7;
