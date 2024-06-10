@@ -50,7 +50,17 @@ article {
   text-align: left;
 }
 
-article div {
+/* using flex to present portfolio on same row with even spacing between images*/
+.portfolio-content {
+  display:flex;
+  justify-content: space-between;
+}
+
+/* adjusted portfolio descriptions to 14px size font */
+.portfolio-content p {
+  font-size: 14px;
+}
+ article div {
   text-align: center;
   width: 100%;
 }
