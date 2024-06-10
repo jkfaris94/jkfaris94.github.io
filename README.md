@@ -4,6 +4,7 @@ This portfolio website showcases Petes work as an artist, including projects, sk
 
 # Author
 Name: John Faris
+
 Email: jkfaris@gmail.com
 
 # How to Use
