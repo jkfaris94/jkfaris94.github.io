@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from '../components/Header'
 import Main from '../components/Main'
 import Footer from '../components/Footer'
@@ -9,17 +9,54 @@ export default function Home() {
   const [isArticleVisible, setIsArticleVisible] = useState(false)
   const [timeout, setTimeoutState] = useState(false)
   const [article, setArticle] = useState('')
+  const [articleTimeout, setArticleTimeout] = useState(false)
+  const [loading, setLoading] = useState(true)
 
-  const handleOpenArticle = (article) => {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false)
+    }, 100)
+    return () => clearTimeout(timer)
+  }, [])
+
+  useEffect(() => {
+    if (loading) {
+      document.body.classList.add('is-preload')
+    } else {
+      document.body.classList.remove('is-preload')
+    }
+
+    if (isArticleVisible) {
+      document.body.classList.add('is-article-visible')
+    } else {
+      document.body.classList.remove('is-article-visible')
+    }
+  }, [loading, isArticleVisible])
+
+  const handleOpenArticle = (articleId) => {
     setIsArticleVisible(true)
-    setArticle(article)
-    setTimeoutState(true)
+    setArticle(articleId)
+
+    setTimeout(() => {
+      setTimeoutState(true)
+    }, 325)
+
+    setTimeout(() => {
+      setArticleTimeout(true)
+    }, 350)
   }
 
   const handleCloseArticle = () => {
-    setIsArticleVisible(false)
-    setArticle('')
-    setTimeoutState(false)
+    setArticleTimeout(false)
+
+    setTimeout(() => {
+      setTimeoutState(false)
+      setArticle('')
+    }, 325)
+
+    setTimeout(() => {
+      setIsArticleVisible(false)
+    }, 350)
   }
 
   return (
@@ -29,6 +66,7 @@ export default function Home() {
         <Main 
           isArticleVisible={isArticleVisible} 
           timeout={timeout} 
+          articleTimeout={articleTimeout} 
           article={article} 
           onClose={handleCloseArticle} 
         />

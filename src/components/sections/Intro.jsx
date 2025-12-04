@@ -1,8 +1,12 @@
 import Image from 'next/image'
 
-export default function Intro({ onClose }) {
+export default function Intro({ isActive, isVisible, onClose }) {
   return (
-    <article id="intro" className="active" style={{display: 'block'}}>
+    <article 
+      id="intro" 
+      className={`${isActive ? 'active' : ''}`} 
+      style={{ display: isVisible ? 'block' : 'none' }}
+    >
       <h2 className="major">Intro</h2>
       <span className="image main">
         <img src="/images/headshot.jpeg" alt="" />
@@ -18,4 +22,3 @@ export default function Intro({ onClose }) {
     </article>
   )
 }
-

@@ -1,6 +1,10 @@
-export default function Work({ onClose }) {
+export default function Work({ isActive, isVisible, onClose }) {
   return (
-    <article id="work" className="active" style={{display: 'block'}}>
+    <article 
+      id="work" 
+      className={`${isActive ? 'active' : ''}`} 
+      style={{ display: isVisible ? 'block' : 'none' }}
+    >
       <h2 className="major">Work</h2>
       <span className="image main"><img src="/images/collage.png" alt="Collage of project photos" /></span>
       <p><strong>Operations Holdings Inc</strong> 
@@ -41,4 +45,3 @@ export default function Work({ onClose }) {
     </article>
   )
 }
-

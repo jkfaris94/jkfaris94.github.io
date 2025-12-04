@@ -1,6 +1,10 @@
-export default function About({ onClose }) {
+export default function About({ isActive, isVisible, onClose }) {
   return (
-    <article id="about" className="active" style={{display: 'block'}}>
+    <article 
+      id="about" 
+      className={`${isActive ? 'active' : ''}`} 
+      style={{ display: isVisible ? 'block' : 'none' }}
+    >
       <h2 className="major">About</h2>
       <span className="image main"><img src="/images/victory.JPG" alt="Headshot of Johnny Faris" /></span>
       <p>
@@ -29,4 +33,3 @@ export default function About({ onClose }) {
     </article>
   )
 }
-

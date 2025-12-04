@@ -1,6 +1,10 @@
-export default function Contact({ onClose }) {
+export default function Contact({ isActive, isVisible, onClose }) {
   return (
-    <article id="contact" className="active" style={{display: 'block'}}>
+    <article 
+      id="contact" 
+      className={`${isActive ? 'active' : ''}`} 
+      style={{ display: isVisible ? 'block' : 'none' }}
+    >
       <h2 className="major">Contact</h2>
       <ul>
         <li><strong>Email:</strong> JKFaris@gmail.com</li>
@@ -14,4 +18,3 @@ export default function Contact({ onClose }) {
     </article>
   )
 }
-
