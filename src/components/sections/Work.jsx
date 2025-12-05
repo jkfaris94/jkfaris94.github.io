@@ -355,7 +355,7 @@ export default function Work({ isActive, isVisible, onClose }) {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            justifyContent: 'flex-start',
+            justifyContent: 'center',
             padding: '2rem',
             overflowY: 'auto',
             overflowX: 'hidden'
@@ -366,21 +366,41 @@ export default function Work({ isActive, isVisible, onClose }) {
           <div 
             style={{ 
               position: 'relative', 
-              maxWidth: '1000px', 
+              maxWidth: '1200px', 
               width: '100%', 
               textAlign: 'center',
               margin: 'auto',
-              padding: '2rem 0 3rem 0',
-              minHeight: 'min-content'
+              padding: '2rem 0',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '1.5rem'
             }} 
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Project Title */}
+            <h3 style={{ 
+              color: 'white', 
+              margin: 0,
+              fontSize: '1.5rem',
+              fontWeight: '500'
+            }}>
+              {selectedProject.title}
+            </h3>
 
+            {/* Image Container */}
             <div style={{ position: 'relative', display: 'inline-block', width: '100%' }}>
               <img 
                 src={selectedProject.images[currentImageIndex]} 
                 alt={`${selectedProject.title} screenshot ${currentImageIndex + 1}`} 
-                style={{ maxHeight: '70vh', maxWidth: '100%', borderRadius: '4px', marginBottom: '1rem', boxShadow: '0 0 20px rgba(0,0,0,0.5)' }} 
+                style={{ 
+                  maxHeight: '75vh', 
+                  maxWidth: '100%', 
+                  borderRadius: '4px', 
+                  boxShadow: '0 0 20px rgba(0,0,0,0.5)',
+                  objectFit: 'contain'
+                }} 
               />
               
               {/* Image Navigation Controls */}
@@ -462,25 +482,20 @@ export default function Work({ isActive, isVisible, onClose }) {
 
             {/* Image Counter */}
             {selectedProject.images.length > 1 && (
-              <div style={{ color: '#ccc', marginTop: '0.5rem', marginBottom: '1rem' }}>
+              <div style={{ color: '#ccc', margin: 0 }}>
                 Image {currentImageIndex + 1} / {selectedProject.images.length}
               </div>
             )}
-
-            <h3 style={{ color: 'white', marginTop: '1rem' }}>{selectedProject.title}</h3>
-            <p style={{ color: '#ccc' }}>{selectedProject.desc}</p>
             
-            {/* Project Navigation Buttons (Floating Bottom) */}
+            {/* Project Navigation Buttons */}
             <div className="project-nav-buttons work-project-nav-buttons" style={{ 
               display: 'flex', 
               justifyContent: 'space-between', 
               alignItems: 'center', 
-              marginTop: '1.5rem',
               width: '100%',
               flexWrap: 'wrap',
               gap: '0.5rem',
               paddingTop: '1rem',
-              paddingBottom: '1rem',
               borderTop: '1px solid rgba(255, 255, 255, 0.1)'
             }}>
               <button
