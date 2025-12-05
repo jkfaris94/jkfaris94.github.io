@@ -7,7 +7,7 @@ export default function Contact({ isActive, isVisible, onClose }) {
     >
       <h2 className="major">Contact</h2>
       <ul>
-        <li><strong>Email:</strong> JKFaris@gmail.com</li>
+        <li><strong>Email:</strong> jkfaris@gmail.com</li>
         <li><strong>Cell:</strong> (253)906-5208</li>
       </ul>
       <ul className="icons">
