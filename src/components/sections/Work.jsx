@@ -4,13 +4,29 @@ import { createPortal } from 'react-dom'
 const projects = [
   {
     id: 1,
+    title: "Champion Lifestyle",
+    desc: "Champion Lifestyle (in development). Individual personal training website built with React. Client portal aspect in development featuring PostgreSQL db, Supabase auth, Google Calendar syncing, session inventory, transaction tracking, automated business analytics.",
+    images: [
+      "/images/champlife-v3/champlife-v3-home-hero.png",
+      "/images/champlife-v3/champlife-v3-dashboard.png",
+      "/images/champlife-v3/champlife-v3-about-cta.png",
+      "/images/champlife-v3/champlife-v3-login.png"
+    ],
+    tools: ["Tailwind", "React", "PostgreSQL", "Supabase", "Firebase", "Google Calendar API"],
+    links: {
+      site: null,
+      repo: null
+    }
+  },
+  {
+    id: 2,
     title: "Operations Holdings Inc",
     desc: "A React-based portfolio web application developed for Operations Holdings, a multimillion-dollar company. Built with Tailwind CSS for responsive, clean design and enhanced with advanced custom animations using Framer Motion.",
     images: [
       "/images/operations-holdings/OH_home.jpeg",
       "/images/operations-holdings/OH_companies.jpeg",
       "/images/operations-holdings/OH_companie_view.jpeg"
-    ], 
+    ],
     tools: ["React", "Tailwind CSS", "Framer Motion"],
     links: {
       site: "https://operationsholdings.com",
@@ -18,7 +34,7 @@ const projects = [
     }
   },
   {
-    id: 2,
+    id: 3,
     title: "Bakery Inventory Manager",
     desc: "A full-stack web application enabling efficient management of raw materials, recipes, and finished baked goods. Features dynamic baking logic and robust server-side logging.",
     images: [
@@ -27,7 +43,7 @@ const projects = [
       "/images/mfbg/mfbg_ingredioents.jpeg",
       "/images/mfbg/mfbg_files.jpeg",
       "/images/mfbg/mfbg_tests.jpeg"
-    ], 
+    ],
     tools: ["React", "Node.js", "Express", "PostgreSQL"],
     links: {
       site: "https://bakery-inventory-manager-frontend.onrender.com/",
@@ -35,10 +51,10 @@ const projects = [
     }
   },
   {
-    id: 3,
+    id: 4,
     title: "WeLoveMovies",
     desc: "A RESTful API powering a movie database. Supports browsing movies, theaters, and reviews with full CRUD operations and robust error handling.",
-    images: ["/images/welovemovies.png"], 
+    images: ["/images/welovemovies.png"],
     tools: ["Node.js", "Express", "Knex", "PostgreSQL"],
     links: {
       site: null,
@@ -46,25 +62,14 @@ const projects = [
     }
   },
   {
-    id: 4,
+    id: 5,
     title: "Flashcard-O-Matic",
     desc: "A React app for creating, editing, and studying custom flashcard decks. Features full CRUD functionality and React Router navigation.",
-    images: ["/images/flashcard.png"], 
+    images: ["/images/flashcard.png"],
     tools: ["React", "Bootstrap", "HTML/CSS"],
     links: {
       site: null,
       repo: "https://github.com/jkfaris94/Flashcard-O-Matic"
-    }
-  },
-  {
-    id: 5,
-    title: "Champion Lifestyle",
-    desc: "A fully deployed WordPress application featuring an SEO-optimized blog, responsive design, and integrated lead-generation features.",
-    images: ["/images/pic02.jpg"], 
-    tools: ["WordPress", "SEO", "CSS"],
-    links: {
-      site: "https://championlifestyle.fit",
-      repo: null
     }
   }
 ]
