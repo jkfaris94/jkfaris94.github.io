@@ -175,6 +175,28 @@ export default function Work({ isActive, isVisible, onClose }) {
             justify-content: center !important;
           }
         }
+        /* Modal scrollbar styling */
+        .work-modal-container {
+          scroll-behavior: smooth;
+        }
+        .work-modal-container::-webkit-scrollbar {
+          width: 8px;
+        }
+        .work-modal-container::-webkit-scrollbar-track {
+          background: rgba(255, 255, 255, 0.1);
+        }
+        .work-modal-container::-webkit-scrollbar-thumb {
+          background: rgba(255, 255, 255, 0.3);
+          border-radius: 4px;
+        }
+        .work-modal-container::-webkit-scrollbar-thumb:hover {
+          background: rgba(255, 255, 255, 0.5);
+        }
+        /* Firefox scrollbar */
+        .work-modal-container {
+          scrollbar-width: thin;
+          scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
+        }
       `}} />
       <h2 className="major">Work</h2>
       
@@ -323,20 +345,34 @@ export default function Work({ isActive, isVisible, onClose }) {
 
       {/* Modal / Carousel */}
       {mounted && selectedProject && createPortal(
-        <div style={{
-          position: 'fixed',
-          top: 0, left: 0, right: 0, bottom: 0,
-          background: 'rgba(0,0,0,0.9)',
-          zIndex: 10000,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '2rem'
-        }} onClick={closeModal}>
+        <div 
+          className="work-modal-container"
+          style={{
+            position: 'fixed',
+            top: 0, left: 0, right: 0, bottom: 0,
+            background: 'rgba(0,0,0,0.9)',
+            zIndex: 10000,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'flex-start',
+            padding: '2rem',
+            overflowY: 'auto',
+            overflowX: 'hidden'
+          }} 
+          onClick={closeModal}
+        >
           
           <div 
-            style={{ position: 'relative', maxWidth: '1000px', width: '100%', textAlign: 'center' }} 
+            style={{ 
+              position: 'relative', 
+              maxWidth: '1000px', 
+              width: '100%', 
+              textAlign: 'center',
+              margin: 'auto',
+              padding: '2rem 0 3rem 0',
+              minHeight: 'min-content'
+            }} 
             onClick={(e) => e.stopPropagation()}
           >
 
@@ -444,6 +480,7 @@ export default function Work({ isActive, isVisible, onClose }) {
               flexWrap: 'wrap',
               gap: '0.5rem',
               paddingTop: '1rem',
+              paddingBottom: '1rem',
               borderTop: '1px solid rgba(255, 255, 255, 0.1)'
             }}>
               <button
