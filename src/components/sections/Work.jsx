@@ -225,10 +225,10 @@ export default function Work({ isActive, isVisible, onClose }) {
             justify-content: center !important;
           }
           .work-project-nav-buttons button {
-            width: auto !important;
+            width: 120px !important;
+            min-width: 120px !important;
             padding: 0.5rem 0.75rem !important;
             font-size: 0.8rem !important;
-            flex: 0 0 auto !important;
           }
         }
         /* Modal scrollbar styling */
@@ -624,8 +624,11 @@ export default function Work({ isActive, isVisible, onClose }) {
                     transition: 'all 0.3s ease',
                     display: 'flex',
                     alignItems: 'center',
+                    justifyContent: 'center',
                     gap: '0.5rem',
-                    fontWeight: '500'
+                    fontWeight: '500',
+                    minWidth: '120px',
+                    width: '120px'
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.background = 'rgba(255, 255, 255, 0.25)'
@@ -637,7 +640,7 @@ export default function Work({ isActive, isVisible, onClose }) {
                   }}
                 >
                   <i className="fa fa-chevron-left"></i>
-                  Previous Project
+                  Project
                 </button>
                 
                 <button
@@ -653,8 +656,11 @@ export default function Work({ isActive, isVisible, onClose }) {
                     transition: 'all 0.3s ease',
                     display: 'flex',
                     alignItems: 'center',
+                    justifyContent: 'center',
                     gap: '0.5rem',
-                    fontWeight: '500'
+                    fontWeight: '500',
+                    minWidth: '120px',
+                    width: '120px'
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.background = 'rgba(255, 255, 255, 0.25)'
@@ -665,7 +671,7 @@ export default function Work({ isActive, isVisible, onClose }) {
                     e.currentTarget.style.transform = 'translateY(0)'
                   }}
                 >
-                  Next Project
+                  Project
                   <i className="fa fa-chevron-right"></i>
                 </button>
               </div>
