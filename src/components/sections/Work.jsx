@@ -176,13 +176,59 @@ export default function Work({ isActive, isVisible, onClose }) {
             height: 1.5rem !important;
             font-size: 0.7rem !important;
           }
-          .work-project-nav-buttons {
-            flex-direction: column !important;
+          .work-modal-container {
+            padding: 0.5rem !important;
+          }
+          .work-modal-content {
+            padding: 1rem 0 !important;
             gap: 0.75rem !important;
           }
-          .work-project-nav-buttons button {
-            width: 100% !important;
+          .work-modal-title {
+            font-size: 1.2rem !important;
+            margin-bottom: 0.5rem !important;
+          }
+          .work-modal-image {
+            max-height: 85vh !important;
+          }
+          .work-image-nav-buttons-container {
+            display: flex !important;
             justify-content: center !important;
+            gap: 1rem !important;
+            margin-top: 0.75rem !important;
+          }
+          .work-image-nav-btn-left,
+          .work-image-nav-btn-right {
+            position: static !important;
+            transform: none !important;
+            width: 40px !important;
+            height: 40px !important;
+            font-size: 1.5rem !important;
+            padding: 0 !important;
+            margin: 0 !important;
+          }
+          .work-image-nav-btn-left:hover,
+          .work-image-nav-btn-right:hover {
+            transform: scale(1.1) !important;
+          }
+          .work-image-container .work-image-nav-btn-left,
+          .work-image-container .work-image-nav-btn-right {
+            display: none !important;
+          }
+          .work-image-counter {
+            font-size: 0.85rem !important;
+            margin: 0.5rem 0 !important;
+          }
+          .work-project-nav-buttons {
+            flex-direction: row !important;
+            gap: 0.5rem !important;
+            padding-top: 0.75rem !important;
+            justify-content: center !important;
+          }
+          .work-project-nav-buttons button {
+            width: auto !important;
+            padding: 0.5rem 0.75rem !important;
+            font-size: 0.8rem !important;
+            flex: 0 0 auto !important;
           }
         }
         /* Modal scrollbar styling */
@@ -374,6 +420,7 @@ export default function Work({ isActive, isVisible, onClose }) {
         >
           
           <div 
+            className="work-modal-content"
             style={{ 
               position: 'relative', 
               maxWidth: '1200px', 
@@ -390,7 +437,7 @@ export default function Work({ isActive, isVisible, onClose }) {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Project Title */}
-            <h3 style={{ 
+            <h3 className="work-modal-title" style={{ 
               color: 'white', 
               margin: 0,
               fontSize: '1.5rem',
@@ -400,8 +447,9 @@ export default function Work({ isActive, isVisible, onClose }) {
             </h3>
 
             {/* Image Container */}
-            <div style={{ position: 'relative', display: 'inline-block', width: '100%' }}>
+            <div className="work-image-container" style={{ position: 'relative', display: 'inline-block', width: '100%' }}>
               <img 
+                className="work-modal-image"
                 src={selectedProject.images[currentImageIndex]} 
                 alt={`${selectedProject.title} screenshot ${currentImageIndex + 1}`} 
                 style={{ 
@@ -492,83 +540,146 @@ export default function Work({ isActive, isVisible, onClose }) {
               )}
             </div>
 
+            {/* Image Navigation Buttons Container (shown below image on mobile) */}
+            {selectedProject.images.length > 1 && (
+              <div className="work-image-nav-buttons-container" style={{ display: 'none' }}>
+                <button 
+                  onClick={prevImage}
+                  className="work-image-nav-btn-left"
+                  style={{
+                    background: 'rgba(0, 0, 0, 0.6)', 
+                    border: '2px solid rgba(255, 255, 255, 0.8)', 
+                    color: 'white', 
+                    fontSize: '2rem', 
+                    cursor: 'pointer', 
+                    borderRadius: '50%',
+                    width: '50px',
+                    height: '50px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    transition: 'all 0.3s ease',
+                    lineHeight: '1',
+                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.5)'
+                  }}
+                >
+                  &#10094;
+                </button>
+                <button 
+                  onClick={nextImage}
+                  className="work-image-nav-btn-right"
+                  style={{
+                    background: 'rgba(0, 0, 0, 0.6)', 
+                    border: '2px solid rgba(255, 255, 255, 0.8)', 
+                    color: 'white', 
+                    fontSize: '2rem', 
+                    cursor: 'pointer', 
+                    borderRadius: '50%',
+                    width: '50px',
+                    height: '50px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    transition: 'all 0.3s ease',
+                    lineHeight: '1',
+                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.5)'
+                  }}
+                >
+                  &#10095;
+                </button>
+              </div>
+            )}
+
             {/* Image Counter */}
             {selectedProject.images.length > 1 && (
-              <div style={{ color: '#ccc', margin: 0 }}>
+              <div className="work-image-counter" style={{ color: '#ccc', margin: 0 }}>
                 Image {currentImageIndex + 1} / {selectedProject.images.length}
               </div>
             )}
             
             {/* Project Navigation Buttons */}
-            <div className="project-nav-buttons work-project-nav-buttons" style={{ 
-              display: 'flex', 
-              justifyContent: 'space-between', 
-              alignItems: 'center', 
+            <div style={{ 
               width: '100%',
-              flexWrap: 'wrap',
-              gap: '0.5rem',
               paddingTop: '1rem',
               borderTop: '1px solid rgba(255, 255, 255, 0.1)'
             }}>
-              <button
-                onClick={prevProject}
-                style={{
-                  background: 'rgba(255, 255, 255, 0.15)',
-                  border: '1px solid rgba(255, 255, 255, 0.3)',
-                  borderRadius: '4px',
-                  color: 'white',
-                  padding: '0.6rem 1.2rem',
-                  cursor: 'pointer',
-                  fontSize: '0.9rem',
-                  transition: 'all 0.3s ease',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  fontWeight: '500'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.25)'
-                  e.currentTarget.style.transform = 'translateY(-2px)'
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)'
-                  e.currentTarget.style.transform = 'translateY(0)'
-                }}
-              >
-                <i className="fa fa-chevron-left"></i>
-                Previous Project
-              </button>
+              {/* Previous and Next Project Buttons */}
+              <div className="project-nav-buttons work-project-nav-buttons" style={{ 
+                display: 'flex', 
+                justifyContent: 'center', 
+                alignItems: 'center', 
+                width: '100%',
+                gap: '0.5rem'
+              }}>
+                <button
+                  onClick={prevProject}
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.15)',
+                    border: '1px solid rgba(255, 255, 255, 0.3)',
+                    borderRadius: '4px',
+                    color: 'white',
+                    padding: '0.6rem 1.2rem',
+                    cursor: 'pointer',
+                    fontSize: '0.9rem',
+                    transition: 'all 0.3s ease',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    fontWeight: '500'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.25)'
+                    e.currentTarget.style.transform = 'translateY(-2px)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)'
+                    e.currentTarget.style.transform = 'translateY(0)'
+                  }}
+                >
+                  <i className="fa fa-chevron-left"></i>
+                  Previous Project
+                </button>
+                
+                <button
+                  onClick={nextProject}
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.15)',
+                    border: '1px solid rgba(255, 255, 255, 0.3)',
+                    borderRadius: '4px',
+                    color: 'white',
+                    padding: '0.6rem 1.2rem',
+                    cursor: 'pointer',
+                    fontSize: '0.9rem',
+                    transition: 'all 0.3s ease',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    fontWeight: '500'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.25)'
+                    e.currentTarget.style.transform = 'translateY(-2px)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)'
+                    e.currentTarget.style.transform = 'translateY(0)'
+                  }}
+                >
+                  Next Project
+                  <i className="fa fa-chevron-right"></i>
+                </button>
+              </div>
               
-              <button className="button small" onClick={closeModal} style={{ margin: 0 }}>Close</button>
-              
-              <button
-                onClick={nextProject}
-                style={{
-                  background: 'rgba(255, 255, 255, 0.15)',
-                  border: '1px solid rgba(255, 255, 255, 0.3)',
-                  borderRadius: '4px',
-                  color: 'white',
-                  padding: '0.6rem 1.2rem',
-                  cursor: 'pointer',
-                  fontSize: '0.9rem',
-                  transition: 'all 0.3s ease',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  fontWeight: '500'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.25)'
-                  e.currentTarget.style.transform = 'translateY(-2px)'
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)'
-                  e.currentTarget.style.transform = 'translateY(0)'
-                }}
-              >
-                Next Project
-                <i className="fa fa-chevron-right"></i>
-              </button>
+              {/* Close Button */}
+              <div style={{ 
+                display: 'flex', 
+                justifyContent: 'center', 
+                alignItems: 'center', 
+                width: '100%',
+                paddingTop: '1rem'
+              }}>
+                <button className="button small" onClick={closeModal} style={{ margin: 0 }}>Close</button>
+              </div>
             </div>
           </div>
         </div>,
