@@ -155,9 +155,19 @@ export default function Work({ isActive, isVisible, onClose }) {
         @media (max-width: 980px) {
           .work-image-nav-btn-left {
             left: 10px !important;
+            background: rgba(0, 0, 0, 0.7) !important;
+            border: 2px solid rgba(255, 255, 255, 0.8) !important;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
           }
           .work-image-nav-btn-right {
             right: 10px !important;
+            background: rgba(0, 0, 0, 0.7) !important;
+            border: 2px solid rgba(255, 255, 255, 0.8) !important;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+          }
+          .work-image-nav-btn-left:hover,
+          .work-image-nav-btn-right:hover {
+            background: rgba(0, 0, 0, 0.9) !important;
           }
         }
         @media (max-width: 736px) {
@@ -414,8 +424,8 @@ export default function Work({ isActive, isVisible, onClose }) {
                       left: '-60px', 
                       top: '50%', 
                       transform: 'translateY(-50%)',
-                      background: 'rgba(255, 255, 255, 0.15)', 
-                      border: '2px solid rgba(255, 255, 255, 0.3)', 
+                      background: 'rgba(0, 0, 0, 0.6)', 
+                      border: '2px solid rgba(255, 255, 255, 0.8)', 
                       color: 'white', 
                       fontSize: '2rem', 
                       cursor: 'pointer', 
@@ -428,14 +438,15 @@ export default function Work({ isActive, isVisible, onClose }) {
                       justifyContent: 'center',
                       zIndex: 10001,
                       transition: 'all 0.3s ease',
-                      lineHeight: '1'
+                      lineHeight: '1',
+                      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.5)'
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.25)'
+                      e.currentTarget.style.background = 'rgba(0, 0, 0, 0.9)'
                       e.currentTarget.style.transform = 'translateY(-50%) scale(1.1)'
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)'
+                      e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'
                       e.currentTarget.style.transform = 'translateY(-50%) scale(1)'
                     }}
                   >
@@ -449,8 +460,8 @@ export default function Work({ isActive, isVisible, onClose }) {
                       right: '-60px', 
                       top: '50%', 
                       transform: 'translateY(-50%)',
-                      background: 'rgba(255, 255, 255, 0.15)', 
-                      border: '2px solid rgba(255, 255, 255, 0.3)', 
+                      background: 'rgba(0, 0, 0, 0.6)', 
+                      border: '2px solid rgba(255, 255, 255, 0.8)', 
                       color: 'white', 
                       fontSize: '2rem', 
                       cursor: 'pointer', 
@@ -463,14 +474,15 @@ export default function Work({ isActive, isVisible, onClose }) {
                       justifyContent: 'center',
                       zIndex: 10001,
                       transition: 'all 0.3s ease',
-                      lineHeight: '1'
+                      lineHeight: '1',
+                      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.5)'
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.25)'
+                      e.currentTarget.style.background = 'rgba(0, 0, 0, 0.9)'
                       e.currentTarget.style.transform = 'translateY(-50%) scale(1.1)'
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)'
+                      e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'
                       e.currentTarget.style.transform = 'translateY(-50%) scale(1)'
                     }}
                   >
