@@ -6,7 +6,11 @@ const projects = [
     id: 1,
     title: "Operations Holdings Inc",
     desc: "A React-based portfolio web application developed for Operations Holdings, a multimillion-dollar company. Built with Tailwind CSS for responsive, clean design and enhanced with advanced custom animations using Framer Motion.",
-    images: ["/images/collage.png"], 
+    images: [
+      "/images/operations-holdings/OH_home.jpeg",
+      "/images/operations-holdings/OH_companies.jpeg",
+      "/images/operations-holdings/OH_companie_view.jpeg"
+    ], 
     tools: ["React", "Tailwind CSS", "Framer Motion"],
     links: {
       site: "https://operationsholdings.com",
@@ -17,7 +21,13 @@ const projects = [
     id: 2,
     title: "Bakery Inventory Manager",
     desc: "A full-stack web application enabling efficient management of raw materials, recipes, and finished baked goods. Features dynamic baking logic and robust server-side logging.",
-    images: ["/images/recipe.png"], 
+    images: [
+      "/images/mfbg/mfbg_home.jpeg",
+      "/images/mfbg/mfbg_recipes.jpeg",
+      "/images/mfbg/mfbg_ingredioents.jpeg",
+      "/images/mfbg/mfbg_files.jpeg",
+      "/images/mfbg/mfbg_tests.jpeg"
+    ], 
     tools: ["React", "Node.js", "Express", "PostgreSQL"],
     links: {
       site: "https://bakery-inventory-manager-frontend.onrender.com/",
