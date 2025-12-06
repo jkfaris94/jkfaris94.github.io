@@ -68,6 +68,7 @@ export default function Home() {
           timeout={timeout} 
           articleTimeout={articleTimeout} 
           article={article} 
+          onOpenArticle={handleOpenArticle}
           onClose={handleCloseArticle} 
         />
         <Footer timeout={timeout} />

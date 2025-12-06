@@ -5,30 +5,28 @@ export default function About({ isActive, isVisible, onClose }) {
       className={`${isActive ? 'active' : ''}`} 
       style={{ display: isVisible ? 'block' : 'none' }}
     >
-      <h2 className="major">About</h2>
+      <h2 className="major">About Me</h2>
       <span className="image main"><img src="/images/victory.JPG" alt="Headshot of Johnny Faris" /></span>
+      
       <p>
-        👨‍💻 Turning ideas into real-world apps.
-        I’m a full-stack developer with hands-on experience building applications using JavaScript, React, Express.js, PostgreSQL, Knex and more. 
-        I have developed projects ranging from recipe managers and blogging platforms to inventory systems for small businesses.
-        <br/><br/>
-        Before coding, I was a professional MMA fighter—an experience that taught me the same qualities I now bring to software development: 
-        discipline, adaptability, and problem-solving under pressure. In the cage, you train for every scenario and think strategically in real time; in development, 
-        you apply that same mindset to debugging, architecting solutions, and creating products that work.
-        <br/><br/>
-        ⚡ Technical Highlights:
-        <br/>
-        React, JavaScript (ES6+), Node.js, Express
-        <br/>
-        REST APIs & PostgreSQL (Knex ORM)
-        <br/>
-        Test-driven development & error handling
-        <br/>
-        Building user-friendly, goal-driven applications
-        <br/><br/>
-        I thrive on solving tough problems, writing clean code, and continuously learning. Whether in the gym, the cage, or at the keyboard, 
-        my work ethic is built on persistence and the belief that progress comes through consistent effort.
+        👨‍💻 <strong>Turning ideas into real-world apps.</strong>
       </p>
+
+      <p>
+        My journey into tech is fueled by a lifelong fascination with complex systems. 
+        As a <strong>Personal Trainer with 10+ years of experience</strong>, I spent a decade "debugging" the human body—analyzing biomechanics, optimizing performance, and solving physiological problems for clients.
+      </p>
+
+      <p>
+        I realized that the logic I applied to training—breaking down big goals into actionable steps, testing variables, and iterating for results—transferred perfectly to software engineering. 
+        Now, I aim to integrate these two worlds, using code to build tools that enhance human health and performance.
+      </p>
+
+      <p>
+        Combined with my background as a <strong>professional MMA fighter</strong>, I bring a unique blend of discipline, strategic thinking, and resilience to every project.
+        Whether in the gym or at the keyboard, I am driven by the belief that progress comes from consistent, calculated effort.
+      </p>
+
       <div className="close" onClick={onClose}>Close</div>
     </article>
   )
