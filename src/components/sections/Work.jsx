@@ -14,7 +14,7 @@ const projects = [
     ],
     tools: ["Tailwind", "React", "PostgreSQL", "Supabase", "Firebase", "Google Calendar API"],
     links: {
-      site: null,
+      site: "https://champlife.fit",
       repo: null
     }
   },
@@ -82,6 +82,7 @@ export default function Work({ isActive, isVisible, onClose }) {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    // eslint-disable-next-line
     setMounted(true)
     return () => setMounted(false)
   }, [])

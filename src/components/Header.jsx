@@ -12,10 +12,10 @@ export default function Header({ onOpenArticle, timeout }) {
       </div>
       <nav>
         <ul>
-          <li><a href="javascript:;" onClick={() => onOpenArticle('intro')}>Intro</a></li>
-          <li><a href="javascript:;" onClick={() => onOpenArticle('work')}>Work</a></li>
-          <li><a href="javascript:;" onClick={() => onOpenArticle('about')}>About</a></li>
-          <li><a href="javascript:;" onClick={() => onOpenArticle('contact')}>Contact</a></li>
+          <li><a href="#" onClick={(e) => { e.preventDefault(); onOpenArticle('intro') }}>Intro</a></li>
+          <li><a href="#" onClick={(e) => { e.preventDefault(); onOpenArticle('work') }}>Work</a></li>
+          <li><a href="#" onClick={(e) => { e.preventDefault(); onOpenArticle('about') }}>About</a></li>
+          <li><a href="#" onClick={(e) => { e.preventDefault(); onOpenArticle('contact') }}>Contact</a></li>
         </ul>
       </nav>
     </header>
