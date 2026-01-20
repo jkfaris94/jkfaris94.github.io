@@ -18,21 +18,22 @@ const projects = [
       repo: null
     }
   },
-  {
-    id: 2,
-    title: "Operations Holdings Inc",
-    desc: "A React-based portfolio web application developed for Operations Holdings, a multimillion-dollar company. Built with Tailwind CSS for responsive, clean design and enhanced with advanced custom animations using Framer Motion.",
-    images: [
-      "/images/operations-holdings/OH_home.jpeg",
-      "/images/operations-holdings/OH_companies.jpeg",
-      "/images/operations-holdings/OH_companie_view.jpeg"
-    ],
-    tools: ["React", "Tailwind CSS", "Framer Motion"],
-    links: {
-      site: "https://operationsholdings.com",
-      repo: null
-    }
-  },
+  // Temporarily hidden for confidentiality
+  // {
+  //   id: 2,
+  //   title: "Operations Holdings Inc",
+  //   desc: "A React-based portfolio web application developed for Operations Holdings, a multimillion-dollar company. Built with Tailwind CSS for responsive, clean design and enhanced with advanced custom animations using Framer Motion.",
+  //   images: [
+  //     "/images/operations-holdings/OH_home.jpeg",
+  //     "/images/operations-holdings/OH_companies.jpeg",
+  //     "/images/operations-holdings/OH_companie_view.jpeg"
+  //   ],
+  //   tools: ["React", "Tailwind CSS", "Framer Motion"],
+  //   links: {
+  //     site: "https://operationsholdings.com",
+  //     repo: null
+  //   }
+  // },
   {
     id: 3,
     title: "Bakery Inventory Manager",
