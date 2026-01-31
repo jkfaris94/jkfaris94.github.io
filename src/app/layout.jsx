@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from '@next/third-parties/google'
 import "./globals.scss";
 
 export const metadata = {
@@ -14,6 +15,10 @@ export default function RootLayout({ children }) {
       <body>
         {children}
       </body>
+      {/* This loads GA4 efficiently.
+        Make sure NEXT_PUBLIC_GA_ID is set in your GitHub Secrets & Workflow! 
+      */}
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
     </html>
   );
 }
