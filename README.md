@@ -25,4 +25,3 @@ This project is configured for static export to GitHub Pages.
 ```bash
 npm run build
 # The 'out' folder contains the static site.
-```
